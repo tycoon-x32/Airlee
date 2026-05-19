@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AirLee</title>
+<link rel="icon" href="logo.png" />
+<link rel="apple-touch-icon" href="logo.png" />
+<link rel="manifest" href="manifest.webmanifest" />
+<meta name="theme-color" content="#000000" />
+<style>@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;1,400;1,600&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Exo 2',Arial,sans-serif;}
+body{background:#000;color:#fff;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+.site-header{position:fixed;top:0;right:0;left:0;display:flex;justify-content:space-between;align-items:center;padding:22px 10%;z-index:20;}
+.logo-wrap{display:flex;align-items:center;gap:12px;color:#fff;}
+.logo-wrap img{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.15);object-fit:cover;}
+.logo-wrap span{font-size:.95rem;letter-spacing:.35rem;text-transform:uppercase;font-weight:700;}
+.hamburger{width:44px;height:44px;border:1px solid rgba(255,255,255,.3);border-radius:12px;background:rgba(0,0,0,.55);color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(8px);}
+.nav-menu{position:fixed;top:0;right:-100%;width:260px;height:100vh;background:rgba(6,6,6,.98);padding:100px 24px 24px;display:flex;flex-direction:column;gap:18px;transition:right .35s ease;z-index:22;}
+.nav-menu.open{right:0;}
+.nav-menu a{display:block;padding:14px 16px;border:1px solid rgba(255,255,255,.1);border-radius:12px;transition:background .25s,transform .25s;}
+.nav-menu a:hover{background:rgba(255,255,255,.06);transform:translateX(4px);}
+.hero{position:relative;min-height:85vh;display:grid;place-items:center;padding:0 10%;overflow:hidden;}
+.hero-cover{position:absolute;inset:0;background:url('https://images.pexels.com/photos/12820604/pexels-photo-12820604.jpeg') center/cover no-repeat;filter:brightness(.18);}
+.hero-overlay{position:relative;z-index:1;max-width:920px;text-align:center;}
+.hero-overlay h1{font-size:6rem;font-style:italic;letter-spacing:.75rem;text-transform:uppercase;margin-bottom:12px;line-height:1;}
+.hero-overlay p{font-size:1.05rem;opacity:.74;letter-spacing:.35rem;margin-top:0;text-transform:uppercase;}
+.category-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;padding:0 10% 160px;perspective:1400px;}
+.category-card{position:relative;height:320px;display:flex;align-items:flex-end;padding:28px;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background-size:cover;background-position:center;transition:transform .45s cubic-bezier(.16,.54,.4,1),border-color .35s,box-shadow .35s;transform-style:preserve-3d;}
+.category-card::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.7));}
+.category-card:hover{transform:translateY(-20px) rotateX(4deg) rotateY(-2deg);border-color:rgba(255,255,255,.24);box-shadow:0 30px 70px rgba(0,0,0,.45);}
+.category-card span{position:relative;z-index:1;font-size:2rem;font-weight:700;font-style:italic;text-transform:uppercase;letter-spacing:.35rem;}
+.footer{padding:24px 10%;opacity:.5;font-size:.85rem;text-align:center;}
+.install-banner{position:fixed;bottom:24px;right:10%;display:flex;align-items:center;gap:16px;max-width:360px;padding:18px 22px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:24px;box-shadow:0 28px 80px rgba(0,0,0,0.35);backdrop-filter:blur(18px);z-index:25;}
+.install-banner.hide{display:none;}
+.install-banner p{margin:0;color:#fff;font-size:.95rem;line-height:1.4;}
+.install-banner button{padding:12px 20px;border:none;border-radius:999px;background:#d4af37;color:#050505;font-weight:700;cursor:pointer;transition:transform .25s,filter .25s;}
+.install-banner button:hover{transform:translateY(-2px);filter:brightness(1.05);}
+@media(max-width:720px){.hero-overlay h1{font-size:3.2rem;}.hero{min-height:60vh;}.category-card{height:260px;}.install-banner{right:8%;left:8%;flex-direction:column;align-items:flex-start;}}</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="logo-wrap"><img src="logo.png" alt="AirLee logo" /><span>AirLee</span></div>
+  <button class="hamburger" id="menuToggle" aria-label="Open navigation">☰</button>
+</header>
+<nav class="nav-menu" id="navMenu">
+  <a href="index.html">Home</a>
+  <a href="cessna208.html">Cessna 208</a>
+  <a href="phenom300.html">Phenom 300</a>
+  <a href="gulfstream-g650.html">Gulfstream G650</a>
+  <a href="challenger350.html">Challenger 350</a>
+</nav>
+<div class="install-banner hide" id="installBanner">
+  <p>Install AirLee for a premium app experience.</p>
+  <button id="installButton">Install App</button>
+</div>
+
+<div class="hero">
+  <div class="hero-cover"></div>
+  <div class="hero-overlay">
+    <h1>AIRLEE</h1>
+    <p>High-speed private flight</p>
+  </div>
+</div>
+
+<div class="category-grid">
+  <a class="category-card" href="cessna208.html" style="background-image:url('cesna 208.jpg');">
+    <span>Cessna 208</span>
+  </a>
+  <a class="category-card" href="phenom300.html" style="background-image:url('phenom 300.jpg');">
+    <span>Phenom 300</span>
+  </a>
+  <a class="category-card" href="gulfstream-g650.html" style="background-image:url('g650.jpg');">
+    <span>Gulfstream G650</span>
+  </a>
+  <a class="category-card" href="challenger350.html" style="background-image:url('Challenger 350.jpg');">
+    <span>Challenger 350</span>
+  </a>
+</div>
+
+<div class="footer">Private aircraft categories with overlay photos and direct access to each luxury flight profile.</div>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js');
+}
+
+const installBanner = document.getElementById('installBanner');
+const installButton = document.getElementById('installButton');
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  installBanner.classList.remove('hide');
+  setTimeout(() => installBanner.classList.add('hide'), 2000);
+});
+installButton.addEventListener('click', async () => {
+  if (!deferredPrompt) return;
+  installBanner.classList.add('hide');
+  deferredPrompt.prompt();
+  await deferredPrompt.userChoice;
+  deferredPrompt = null;
+});
+window.addEventListener('appinstalled', () => {
+  installBanner.classList.add('hide');
+});
+
+document.getElementById('menuToggle').addEventListener('click', function(){
+  document.getElementById('navMenu').classList.toggle('open');
+});
+</script>
+</body>
+</html>

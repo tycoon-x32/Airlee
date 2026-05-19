@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AirLee • Challenger 350</title>
+<link rel="icon" href="logo.png" />
+<link rel="apple-touch-icon" href="logo.png" />
+<link rel="manifest" href="manifest.webmanifest" />
+<meta name="theme-color" content="#000000" />
+<style>@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;1,400;1,600&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Exo 2',Arial,sans-serif;}
+body{background:#050505;color:#fff;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+.site-header{position:fixed;inset:0 0 auto 0;display:flex;justify-content:space-between;align-items:center;padding:20px 10%;background:rgba(0,0,0,.75);backdrop-filter:blur(10px);z-index:10;}
+.site-title{font-size:1rem;text-transform:uppercase;letter-spacing:.35rem;font-weight:700;font-style:italic;}
+.logo-wrap{display:flex;align-items:center;gap:12px;color:#fff;}
+.logo-wrap img{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.15);object-fit:cover;}
+.logo-wrap span{font-size:.95rem;letter-spacing:.35rem;text-transform:uppercase;font-weight:700;}
+.hamburger{width:40px;height:40px;border:1px solid rgba(255,255,255,.25);background:transparent;color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;}
+.nav-menu{position:fixed;top:0;right:-100%;width:260px;height:100vh;background:#050505;padding:90px 24px 24px;display:flex;flex-direction:column;gap:18px;transition:right .35s ease;z-index:11;}
+.nav-menu.open{right:0;}
+.nav-menu a{display:block;padding:12px 14px;border:1px solid rgba(255,255,255,.1);border-radius:6px;transition:background .25s,transform .25s;}
+.nav-menu a:hover{background:rgba(255,255,255,.06);transform:translateX(4px);}
+.hero-section{min-height:70vh;display:grid;align-items:end;padding:140px 10% 60px;position:relative;}
+.hero-cover{position:absolute;inset:0;background:url('Challenger 350.jpg') center/cover no-repeat;filter:brightness(.28);}
+.hero-overlay{position:relative;z-index:1;max-width:720px;}
+.hero-overlay h1{font-size:3rem;letter-spacing:.4rem;text-transform:uppercase;margin-bottom:18px;font-style:italic;}
+.hero-overlay p{opacity:.75;line-height:1.8;max-width:640px;font-size:1rem;}
+.content-section{padding:40px 10% 80px;display:grid;gap:38px;}
+.section-block{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:28px;border-radius:18px;transition:transform .35s,box-shadow .35s;transform-style:preserve-3d;}
+.section-block:hover{transform:translateY(-10px);box-shadow:0 28px 60px rgba(0,0,0,.35);}
+.section-block h2{font-size:1.4rem;letter-spacing:.25rem;text-transform:uppercase;margin-bottom:18px;font-style:italic;}
+.section-block p{opacity:.78;line-height:1.8;font-size:1rem;}
+.specs-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;list-style:none;padding:0;margin:0;}
+.specs-list li{padding:16px;border:1px solid rgba(255,255,255,.08);border-radius:12px;line-height:1.7;font-size:.95rem;}
+.footer{padding:24px 10%;opacity:.55;font-size:.85rem;}
+.booking-panel{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:30px;display:grid;gap:22px;margin-top:24px;}
+.booking-panel h2{margin:0 0 10px;font-size:1.3rem;text-transform:uppercase;letter-spacing:.2rem;font-style:italic;}
+.booking-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;}
+.booking-row input{width:100%;padding:14px 16px;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:rgba(255,255,255,.04);color:#fff;font-size:.95rem;outline:none;transition:border .25s,transform .25s;}
+.booking-row input:focus{border-color:#fff;transform:translateY(-1px);}
+.booking-cta{display:flex;justify-content:flex-end;}
+.booking-cta a{padding:14px 28px;border-radius:999px;background:#d4af37;color:#050505;font-weight:700;text-transform:uppercase;letter-spacing:.12rem;transition:transform .25s,filter .25s;}
+.booking-cta a:hover{transform:translateY(-3px);filter:brightness(1.05);}
+@media(max-width:720px){.hero-overlay h1{font-size:2.2rem;}.site-header{padding:20px 6%;}.nav-menu{width:100%;}.hero-section{padding-top:120px;}.booking-row{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<header class="site-header">
+<div class="logo-wrap"><img src="logo.png" alt="AirLee logo" /><span>AirLee</span></div>
+<button class="hamburger" id="menuToggle" aria-label="Toggle menu">☰</button>
+</header>
+<nav class="nav-menu" id="navMenu">
+<a href="index.html">Home</a>
+<a href="cessna208.html">Cessna 208</a>
+<a href="phenom300.html">Phenom 300</a>
+<a href="gulfstream-g650.html">Gulfstream G650</a>
+<a href="challenger350.html">Challenger 350</a>
+</nav>
+<section class="hero-section">
+<div class="hero-cover"></div>
+<div class="hero-overlay">
+<h1>Challenger 350</h1>
+<p>Corporate charter with a quiet flat-floor cabin, advanced systems and professional crew for superior business-class flight.</p>
+</div>
+</section>
+<div class="content-section">
+<div class="section-block">
+<h2>Flight Uses</h2>
+<p>The Challenger 350 suits premium corporate transport, VIP group travel, and cross-country business missions. Its large cabin layout supports private meetings and VIP hospitality while crew service delivers peace-of-mind hospitality.</p>
+</div>
+<div class="section-block">
+<h2>Performance & Interior</h2>
+<ul class="specs-list">
+<li><strong>Range</strong><br>3,200 nautical miles</li>
+<li><strong>Cruise Speed</strong><br>459 knots</li>
+<li><strong>Passengers</strong><br>8–10 passengers</li>
+<li><strong>Interior</strong><br>Flat floor cabin, executive club seating, refreshment center</li>
+<li><strong>Crew</strong><br>Two pilots and one cabin attendant standard</li>
+</ul>
+</div>
+<div class="section-block">
+<h2>Gallery</h2>
+<p>The interior gallery for this aircraft category is available on request. Contact us for the premium visuals.</p>
+</div>
+</div>
+<div class="booking-panel">
+  <h2>Request Booking</h2>
+  <div class="booking-row">
+    <input type="text" placeholder="Departure" />
+    <input type="text" placeholder="Destination" />
+    <input type="text" placeholder="Time" />
+    <input type="text" placeholder="Budget" />
+  </div>
+  <div class="booking-cta">
+    <a href="mailto:leeglobalholdings1@gmail.com?subject=Booking%20Request%20-%20Challenger%20350">Request Booking</a>
+  </div>
+</div>
+<div class="footer">Black ambient theme and white-tone visuals create a calm, premium presentation for each flight category.</div>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js');
+}
+document.getElementById('menuToggle').addEventListener('click', function(){document.getElementById('navMenu').classList.toggle('open');});
+</script>
+</body>
+</html>
