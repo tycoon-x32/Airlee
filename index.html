@@ -1,117 +1,799 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AirLee</title>
-<link rel="icon" href="logo.png" />
-<link rel="apple-touch-icon" href="logo.png" />
-<link rel="manifest" href="manifest.webmanifest" />
-<meta name="theme-color" content="#000000" />
-<style>@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;1,400;1,600&display=swap');
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Exo 2',Arial,sans-serif;}
-body{background:#000;color:#fff;overflow-x:hidden;}
-a{color:inherit;text-decoration:none;}
-.site-header{position:fixed;top:0;right:0;left:0;display:flex;justify-content:space-between;align-items:center;padding:22px 10%;z-index:20;}
-.logo-wrap{display:flex;align-items:center;gap:12px;color:#fff;}
-.logo-wrap img{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.15);object-fit:cover;}
-.logo-wrap span{font-size:.95rem;letter-spacing:.35rem;text-transform:uppercase;font-weight:700;}
-.hamburger{width:44px;height:44px;border:1px solid rgba(255,255,255,.3);border-radius:12px;background:rgba(0,0,0,.55);color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(8px);}
-.nav-menu{position:fixed;top:0;right:-100%;width:260px;height:100vh;background:rgba(6,6,6,.98);padding:100px 24px 24px;display:flex;flex-direction:column;gap:18px;transition:right .35s ease;z-index:22;}
-.nav-menu.open{right:0;}
-.nav-menu a{display:block;padding:14px 16px;border:1px solid rgba(255,255,255,.1);border-radius:12px;transition:background .25s,transform .25s;}
-.nav-menu a:hover{background:rgba(255,255,255,.06);transform:translateX(4px);}
-.hero{position:relative;min-height:85vh;display:grid;place-items:center;padding:0 10%;overflow:hidden;}
-.hero-cover{position:absolute;inset:0;background:url('https://images.pexels.com/photos/12820604/pexels-photo-12820604.jpeg') center/cover no-repeat;filter:brightness(.18);}
-.hero-overlay{position:relative;z-index:1;max-width:920px;text-align:center;}
-.hero-overlay h1{font-size:6rem;font-style:italic;letter-spacing:.75rem;text-transform:uppercase;margin-bottom:12px;line-height:1;}
-.hero-overlay p{font-size:1.05rem;opacity:.74;letter-spacing:.35rem;margin-top:0;text-transform:uppercase;}
-.category-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;padding:0 10% 160px;perspective:1400px;}
-.category-card{position:relative;height:320px;display:flex;align-items:flex-end;padding:28px;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background-size:cover;background-position:center;transition:transform .45s cubic-bezier(.16,.54,.4,1),border-color .35s,box-shadow .35s;transform-style:preserve-3d;}
-.category-card::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.7));}
-.category-card:hover{transform:translateY(-20px) rotateX(4deg) rotateY(-2deg);border-color:rgba(255,255,255,.24);box-shadow:0 30px 70px rgba(0,0,0,.45);}
-.category-card span{position:relative;z-index:1;font-size:2rem;font-weight:700;font-style:italic;text-transform:uppercase;letter-spacing:.35rem;}
-.footer{padding:24px 10%;opacity:.5;font-size:.85rem;text-align:center;}
-.install-banner{position:fixed;bottom:24px;right:10%;display:flex;align-items:center;gap:16px;max-width:360px;padding:18px 22px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:24px;box-shadow:0 28px 80px rgba(0,0,0,0.35);backdrop-filter:blur(18px);z-index:25;}
-.install-banner.hide{display:none;}
-.install-banner p{margin:0;color:#fff;font-size:.95rem;line-height:1.4;}
-.install-banner button{padding:12px 20px;border:none;border-radius:999px;background:#d4af37;color:#050505;font-weight:700;cursor:pointer;transition:transform .25s,filter .25s;}
-.install-banner button:hover{transform:translateY(-2px);filter:brightness(1.05);}
-@media(max-width:720px){.hero-overlay h1{font-size:3.2rem;}.hero{min-height:60vh;}.category-card{height:260px;}.install-banner{right:8%;left:8%;flex-direction:column;align-items:flex-start;}}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AirLee | Private Aviation</title>
+<link rel="icon" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#000000">
+<meta name="description" content="AirLee private aviation. Explore aircraft and discover careers in marketing, strategy and business development.">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Exo 2', Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* HEADER */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 10%;
+  z-index: 30;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,.65),
+    transparent
+  );
+}
+
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+}
+
+.logo-wrap img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.2);
+  object-fit: cover;
+}
+
+.logo-wrap span {
+  font-size: .95rem;
+  letter-spacing: .35rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* JOB OPPORTUNITIES BUTTON */
+
+.job-opportunities {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 17px;
+  border: 1px solid rgba(255,255,255,.5);
+  border-radius: 10px;
+  color: #fff;
+  background: rgba(8,8,8,.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background .25s, color .25s, border-color .25s;
+}
+
+.job-opportunities:hover {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+.job-indicator {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(255,255,255,.45);
+}
+
+.job-opportunities:hover .job-indicator {
+  background: #000;
+  box-shadow: none;
+}
+
+/* HAMBURGER */
+
+.hamburger {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 12px;
+  background: rgba(0,0,0,.65);
+  color: #fff;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: background .25s;
+}
+
+.hamburger:hover {
+  background: rgba(255,255,255,.12);
+}
+
+/* NAVIGATION */
+
+.nav-menu {
+  position: fixed;
+  top: 0;
+  right: -110%;
+  width: 280px;
+  max-width: 85%;
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: auto;
+  background: rgba(6,6,6,.98);
+  padding: 100px 24px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: right .35s ease;
+  z-index: 25;
+  border-left: 1px solid rgba(255,255,255,.1);
+}
+
+.nav-menu.open {
+  right: 0;
+}
+
+.nav-menu a {
+  display: block;
+  padding: 14px 16px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 12px;
+  transition: background .25s, transform .25s;
+  font-size: 13px;
+}
+
+.nav-menu a:hover {
+  background: rgba(255,255,255,.08);
+  transform: translateX(4px);
+}
+
+.nav-menu .careers-menu-link {
+  border-color: rgba(255,255,255,.55);
+  font-weight: 700;
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+  min-height: 85vh;
+  min-height: 85svh;
+  display: grid;
+  place-items: center;
+  padding: 100px 10% 70px;
+  overflow: hidden;
+}
+
+.hero-cover {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      0deg,
+      #000 0%,
+      rgba(0,0,0,.25) 40%,
+      rgba(0,0,0,.3) 100%
+    ),
+    url('https://images.pexels.com/photos/12820604/pexels-photo-12820604.jpeg')
+    center / cover no-repeat;
+  filter: brightness(.45);
+  transform: scale(1.02);
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  max-width: 920px;
+  text-align: center;
+}
+
+.hero-overlay h1 {
+  font-size: clamp(3.2rem, 9vw, 6rem);
+  font-style: italic;
+  letter-spacing: .75rem;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  line-height: 1.1;
+}
+
+.hero-overlay p {
+  font-size: clamp(.7rem, 2vw, 1.05rem);
+  opacity: .8;
+  letter-spacing: .35rem;
+  text-transform: uppercase;
+}
+
+/* AIRCRAFT CARDS */
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  padding: 25px 10% 120px;
+  perspective: 1400px;
+}
+
+.category-card {
+  position: relative;
+  height: 320px;
+  display: flex;
+  align-items: flex-end;
+  padding: 28px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.08);
+  background-size: cover;
+  background-position: center;
+  transition:
+    transform .45s cubic-bezier(.16,.54,.4,1),
+    border-color .35s,
+    box-shadow .35s;
+  transform-style: preserve-3d;
+}
+
+.category-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,.12),
+    rgba(0,0,0,.82)
+  );
+  transition: background .3s;
+}
+
+.category-card:hover {
+  transform: translateY(-10px) rotateX(2deg);
+  border-color: rgba(255,255,255,.3);
+  box-shadow: 0 30px 70px rgba(0,0,0,.45);
+}
+
+.category-card span {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(1.3rem, 2.5vw, 2rem);
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+}
+
+/* CAREERS STRIP */
+
+.careers-strip {
+  position: relative;
+  margin: 0 10% 100px;
+  padding: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 22px;
+  background:
+    linear-gradient(120deg, #111, #050505 75%);
+  overflow: hidden;
+}
+
+.careers-strip::after {
+  content: 'AL';
+  position: absolute;
+  right: 25%;
+  top: -65px;
+  font-size: 220px;
+  font-weight: 700;
+  font-style: italic;
+  color: rgba(255,255,255,.025);
+  pointer-events: none;
+}
+
+.careers-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.careers-label {
+  color: #aaa;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.careers-copy h2 {
+  font-size: clamp(1.7rem, 4vw, 2.8rem);
+  font-weight: 500;
+  margin: 12px 0;
+}
+
+.careers-copy p {
+  max-width: 550px;
+  color: #aaa;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.careers-cta {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 15px 22px;
+  background: #fff;
+  color: #000;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  transition: background .25s, color .25s;
+}
+
+.careers-cta:hover {
+  background: transparent;
+  color: #fff;
+}
+
+/* FOOTER */
+
+.footer {
+  padding: 28px 10%;
+  border-top: 1px solid rgba(255,255,255,.1);
+  color: #888;
+  font-size: .8rem;
+  text-align: center;
+}
+
+/* INSTALL BANNER */
+
+.install-banner {
+  position: fixed;
+  bottom: 24px;
+  right: 5%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 380px;
+  padding: 18px 22px;
+  background: rgba(12,12,12,.94);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 18px;
+  box-shadow: 0 28px 80px rgba(0,0,0,.5);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  z-index: 40;
+}
+
+.install-banner.hide {
+  display: none;
+}
+
+.install-banner p {
+  color: #fff;
+  font-size: .85rem;
+  line-height: 1.5;
+}
+
+.install-banner button {
+  padding: 12px 18px;
+  border: 1px solid #fff;
+  border-radius: 999px;
+  background: #fff;
+  color: #050505;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .25s, color .25s;
+}
+
+.install-banner button:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* MOBILE */
+
+@media(max-width:720px) {
+  .site-header {
+    padding: 16px 5%;
+  }
+
+  .logo-wrap {
+    gap: 8px;
+  }
+
+  .logo-wrap img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .logo-wrap span {
+    font-size: .8rem;
+    letter-spacing: .2rem;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+
+  .job-opportunities {
+    padding: 11px 10px;
+    gap: 7px;
+    font-size: 9px;
+    letter-spacing: .4px;
+    border-radius: 9px;
+  }
+
+  .job-indicator {
+    width: 6px;
+    height: 6px;
+  }
+
+  .hamburger {
+    width: 38px;
+    height: 38px;
+    border-radius: 9px;
+    font-size: 19px;
+  }
+
+  .hero {
+    min-height: 65vh;
+    min-height: 65svh;
+    padding: 100px 5% 50px;
+  }
+
+  .hero-overlay h1 {
+    font-size: clamp(2.5rem, 10vw, 3.5rem);
+    letter-spacing: .35rem;
+  }
+
+  .hero-overlay p {
+    font-size: .7rem;
+    letter-spacing: .18rem;
+    line-height: 1.8;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    padding: 15px 5% 70px;
+  }
+
+  .category-card {
+    height: 260px;
+    border-radius: 16px;
+  }
+
+  .careers-strip {
+    margin: 0 5% 70px;
+    padding: 28px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .careers-cta {
+    width: 100%;
+  }
+
+  .careers-strip::after {
+    right: 0;
+    font-size: 150px;
+  }
+
+  .footer {
+    padding: 24px 5%;
+  }
+
+  .install-banner {
+    right: 5%;
+    left: 5%;
+    bottom: 15px;
+    max-width: none;
+    padding: 15px;
+    gap: 12px;
+    border-radius: 14px;
+  }
+
+  .install-banner p {
+    flex: 1;
+    font-size: .8rem;
+  }
+
+  .install-banner button {
+    padding: 10px 13px;
+    font-size: 11px;
+  }
+}
+
+@media(max-width:390px) {
+  .logo-wrap span {
+    letter-spacing: .1rem;
+    font-size: .72rem;
+  }
+
+  .logo-wrap img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .header-actions {
+    gap: 6px;
+  }
+
+  .job-opportunities {
+    padding: 10px 8px;
+    font-size: 8px;
+  }
+
+  .hamburger {
+    width: 34px;
+    height: 36px;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .install-banner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+</style>
 </head>
+
 <body>
+
 <header class="site-header">
-  <div class="logo-wrap"><img src="logo.png" alt="AirLee logo" /><span>AirLee</span></div>
-  <button class="hamburger" id="menuToggle" aria-label="Open navigation">☰</button>
+
+  <a class="logo-wrap" href="index.html" aria-label="AirLee home">
+    <img src="logo.png" alt="AirLee logo">
+    <span>AirLee</span>
+  </a>
+
+  <div class="header-actions">
+
+    <a href="job.html" class="job-opportunities">
+      <span class="job-indicator"></span>
+      Job Opportunities <span aria-hidden="true">↗</span>
+    </a>
+
+    <button
+      class="hamburger"
+      id="menuToggle"
+      aria-label="Open navigation"
+      aria-expanded="false"
+      aria-controls="navMenu"
+      type="button"
+    >☰</button>
+
+  </div>
 </header>
-<nav class="nav-menu" id="navMenu">
+
+<nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+
   <a href="index.html">Home</a>
   <a href="helicopter.html">Helicopter</a>
   <a href="cessna208.html">Cessna 208</a>
   <a href="phenom300.html">Phenom 300</a>
   <a href="gulfstream-g650.html">Gulfstream G650</a>
   <a href="challenger350.html">Challenger 350</a>
+  <a href="job.html" class="careers-menu-link">Job Opportunities ↗</a>
+
 </nav>
+
 <div class="install-banner hide" id="installBanner">
   <p>Install AirLee for a premium app experience.</p>
-  <button id="installButton">Install App</button>
+  <button id="installButton" type="button">Install App</button>
 </div>
 
-<div class="hero">
-  <div class="hero-cover"></div>
-  <div class="hero-overlay">
-    <h1>AIRLEE</h1>
-    <p>High-speed private flight</p>
-  </div>
-</div>
+<main>
 
-<div class="category-grid">
-  <a class="category-card" href="helicopter.html" style="background-image:url('helicopter.jpg');">
-    <span>Helicopter</span>
-  </a>
-  <a class="category-card" href="cessna208.html" style="background-image:url('cesna 208.jpg');">
-    <span>Cessna 208</span>
-  </a>
-  <a class="category-card" href="phenom300.html" style="background-image:url('phenom 300.jpg');">
-    <span>Phenom 300</span>
-  </a>
-  <a class="category-card" href="gulfstream-g650.html" style="background-image:url('g650.jpg');">
-    <span>Gulfstream G650</span>
-  </a>
-  <a class="category-card" href="challenger350.html" style="background-image:url('Challenger 350.jpg');">
-    <span>Challenger 350</span>
-  </a>
-</div>
+  <section class="hero">
+    <div class="hero-cover"></div>
 
-<div class="footer">Private aircraft categories with overlay photos and direct access to each luxury flight profile.</div>
+    <div class="hero-overlay">
+      <h1>AIRLEE</h1>
+      <p>High-speed private flight</p>
+    </div>
+  </section>
+
+  <section class="category-grid" aria-label="Aircraft categories">
+
+    <a class="category-card"
+       href="helicopter.html"
+       style="background-image:url('helicopter.jpg');">
+      <span>Helicopter</span>
+    </a>
+
+    <a class="category-card"
+       href="cessna208.html"
+       style="background-image:url('cesna 208.jpg');">
+      <span>Cessna 208</span>
+    </a>
+
+    <a class="category-card"
+       href="phenom300.html"
+       style="background-image:url('phenom 300.jpg');">
+      <span>Phenom 300</span>
+    </a>
+
+    <a class="category-card"
+       href="gulfstream-g650.html"
+       style="background-image:url('g650.jpg');">
+      <span>Gulfstream G650</span>
+    </a>
+
+    <a class="category-card"
+       href="challenger350.html"
+       style="background-image:url('Challenger 350.jpg');">
+      <span>Challenger 350</span>
+    </a>
+
+  </section>
+
+  <section class="careers-strip">
+
+    <div class="careers-copy">
+      <div class="careers-label">AirLee Careers &amp; Strategy</div>
+
+      <h2>Build. Influence. Elevate.</h2>
+
+      <p>
+        Explore opportunities in marketing, business development, and
+        strategy. Submit your CV and introduce yourself to the AirLee team.
+        Applications are free and subject to review.
+      </p>
+    </div>
+
+    <a href="job.html" class="careers-cta">
+      Explore Opportunities <span aria-hidden="true">↗</span>
+    </a>
+
+  </section>
+
+</main>
+
+<footer class="footer">
+  Private aircraft categories with direct access to each luxury flight profile.
+  <br><br>
+  © <span id="year"></span> AirLee. All rights reserved.
+</footer>
+
 <script>
+/* SERVICE WORKER */
+
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('service-worker.js');
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('service-worker.js')
+      .catch(error => {
+        console.error('Service worker registration failed:', error);
+      });
+  });
 }
+
+/* NAVIGATION */
+
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
+
+menuToggle.addEventListener('click', function () {
+  const isOpen = navMenu.classList.toggle('open');
+
+  menuToggle.setAttribute('aria-expanded', String(isOpen));
+  menuToggle.setAttribute(
+    'aria-label',
+    isOpen ? 'Close navigation' : 'Open navigation'
+  );
+
+  menuToggle.textContent = isOpen ? '✕' : '☰';
+});
+
+navMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navMenu.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Open navigation');
+    menuToggle.textContent = '☰';
+  });
+});
+
+/* CLOSE NAVIGATION WHEN ESCAPE IS PRESSED */
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') {
+    navMenu.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Open navigation');
+    menuToggle.textContent = '☰';
+  }
+});
+
+/* PWA INSTALLATION */
 
 const installBanner = document.getElementById('installBanner');
 const installButton = document.getElementById('installButton');
-let deferredPrompt;
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
+
+let deferredPrompt = null;
+
+window.addEventListener('beforeinstallprompt', event => {
+  event.preventDefault();
+  deferredPrompt = event;
   installBanner.classList.remove('hide');
-  setTimeout(() => installBanner.classList.add('hide'), 2000);
 });
+
 installButton.addEventListener('click', async () => {
-  if (!deferredPrompt) return;
-  installBanner.classList.add('hide');
+  if (!deferredPrompt) {
+    installBanner.classList.add('hide');
+    return;
+  }
+
   deferredPrompt.prompt();
+
   await deferredPrompt.userChoice;
+
   deferredPrompt = null;
-});
-window.addEventListener('appinstalled', () => {
   installBanner.classList.add('hide');
 });
 
-document.getElementById('menuToggle').addEventListener('click', function(){
-  document.getElementById('navMenu').classList.toggle('open');
+window.addEventListener('appinstalled', () => {
+  installBanner.classList.add('hide');
+  deferredPrompt = null;
 });
+
+/* FOOTER YEAR */
+
+document.getElementById('year').textContent =
+  new Date().getFullYear();
 </script>
+
 </body>
 </html>
