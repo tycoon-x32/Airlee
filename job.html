@@ -1,0 +1,1172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050505">
+<meta name="description" content="AirLee Careers, job opportunities, applications and private consultations.">
+<title>AirLee — Careers & Strategy</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black: #050505;
+  --surface: #101010;
+  --white: #f7f7f7;
+  --muted: #a2a2a2;
+  --border: rgba(255,255,255,.15);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.6;
+}
+
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+
+.container {
+  width: min(1200px, 90%);
+  margin: auto;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+  border-bottom: 1px solid var(--border);
+  background: rgba(5,5,5,.45);
+}
+
+.nav {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 13px;
+  letter-spacing: 7px;
+  font-weight: 600;
+}
+
+.monogram {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  letter-spacing: -4px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 12px;
+  color: #d1d1d1;
+}
+
+.nav-links a:hover { color: white; }
+
+.nav-cta {
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+}
+
+.menu-btn {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: white;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.hero {
+  min-height: 760px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, #050505 0%, rgba(5,5,5,.93) 28%,
+    rgba(5,5,5,.48) 65%, rgba(5,5,5,.12) 100%),
+    linear-gradient(0deg, #050505 0%, transparent 45%),
+    url("https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&w=2200&q=85")
+    center 48% / cover no-repeat;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 100px;
+  max-width: 670px;
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #c6c6c6;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(58px, 9vw, 112px);
+  font-weight: 400;
+  letter-spacing: 5px;
+  line-height: 1.04;
+}
+
+.hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(21px, 3vw, 30px);
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+.hero p {
+  color: #c6c6c6;
+  font-size: 14px;
+  max-width: 480px;
+  margin-top: 20px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 23px;
+  border: 1px solid white;
+  background: white;
+  color: black;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.btn:hover { background: #d9d9d9; }
+
+.btn-outline {
+  background: transparent;
+  color: white;
+  border-color: rgba(255,255,255,.5);
+}
+
+.btn-outline:hover {
+  background: white;
+  color: black;
+}
+
+.hero-bottom {
+  position: absolute;
+  bottom: 35px;
+  left: 0;
+  width: 100%;
+}
+
+.roles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 700px;
+}
+
+.role {
+  border-left: 1px solid rgba(255,255,255,.4);
+  padding-left: 14px;
+}
+
+.role strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.role span {
+  color: #aaa;
+  font-size: 10px;
+}
+
+section.content-section { padding: 100px 0; }
+
+.section-heading {
+  max-width: 700px;
+  margin-bottom: 40px;
+}
+
+.section-heading h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 58px);
+  line-height: 1.15;
+  font-weight: 400;
+}
+
+.section-heading p {
+  margin-top: 15px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.opportunities {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.opportunity {
+  min-height: 230px;
+  padding: 28px;
+  border: 1px solid var(--border);
+  background: linear-gradient(145deg, #121212, #070707);
+  transition: transform .3s, border-color .3s;
+}
+
+.opportunity:hover {
+  transform: translateY(-5px);
+  border-color: #777;
+}
+
+.number {
+  font-size: 11px;
+  color: #888;
+  letter-spacing: 3px;
+}
+
+.opportunity h3 {
+  margin-top: 36px;
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.opportunity p {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.application-section {
+  background: #f4f4f4;
+  color: #080808;
+  padding: 100px 0;
+}
+
+.application-section .eyebrow { color: #555; }
+.application-section .section-heading p { color: #555; }
+
+.application-layout {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 55px;
+  align-items: start;
+}
+
+.form-card {
+  padding: 30px;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.field { margin-bottom: 18px; }
+.field.full { grid-column: 1 / -1; }
+
+.field label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 13px;
+  background: #fafafa;
+  color: #111;
+  border: 1px solid #d4d4d4;
+  border-radius: 2px;
+  outline: none;
+  font-size: 12px;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: #111;
+}
+
+.field input[type="file"] { padding: 12px; }
+.field textarea { min-height: 100px; resize: vertical; }
+
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 5px 0 20px;
+  font-size: 11px;
+  color: #444;
+}
+
+.consent input { margin-top: 3px; }
+
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  background: #080808;
+  color: white;
+  border: 1px solid #080808;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.submit-btn:hover { background: #303030; }
+
+.submit-btn:disabled {
+  opacity: .6;
+  cursor: wait;
+}
+
+.form-note {
+  margin-top: 12px;
+  font-size: 11px;
+  color: #666;
+  overflow-wrap: anywhere;
+}
+
+.application-aside { padding-top: 10px; }
+
+.application-aside h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 1.25;
+}
+
+.application-aside p {
+  margin-top: 17px;
+  color: #555;
+  font-size: 13px;
+}
+
+.aside-line {
+  height: 1px;
+  background: #ccc;
+  margin: 30px 0;
+}
+
+.aside-item {
+  display: flex;
+  gap: 16px;
+  margin: 22px 0;
+}
+
+.aside-item strong {
+  font-size: 13px;
+  display: block;
+}
+
+.aside-item span {
+  font-size: 12px;
+  color: #666;
+}
+
+.consultation-layout {
+  display: grid;
+  grid-template-columns: 1fr .85fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.price-card {
+  border: 1px solid var(--border);
+  padding: 30px;
+  background: linear-gradient(145deg, #111, #080808);
+}
+
+.price {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  margin: 15px 0 3px;
+}
+
+.price-card > p {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.service-options {
+  margin: 28px 0;
+  display: grid;
+  gap: 10px;
+}
+
+.service-option {
+  padding: 14px;
+  border: 1px solid var(--border);
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.service-option input {
+  margin-top: 5px;
+  accent-color: black;
+}
+
+.service-option strong {
+  font-size: 12px;
+  display: block;
+}
+
+.service-option span span {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.booking-form .field input,
+.booking-form .field select,
+.booking-form .field textarea {
+  background: #111;
+  color: white;
+  border-color: #333;
+}
+
+.booking-form .field label { color: #ddd; }
+
+.booking-form .submit-btn {
+  background: white;
+  color: black;
+  border-color: white;
+}
+
+.booking-form .submit-btn:hover { background: #ddd; }
+
+.payment-note {
+  margin-top: 12px;
+  font-size: 11px;
+  color: #aaa;
+}
+
+.payment-number {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+  padding: 15px;
+  border: 1px solid var(--border);
+  justify-content: space-between;
+}
+
+.payment-number strong {
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.copy-btn {
+  padding: 8px 12px;
+  background: transparent;
+  color: white;
+  border: 1px solid #777;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.booking-aside {
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 35px;
+  background:
+    linear-gradient(0deg, rgba(0,0,0,.95), rgba(0,0,0,.05)),
+    url("https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=1000&q=80")
+    center / cover no-repeat;
+  border: 1px solid var(--border);
+}
+
+.booking-aside h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.3;
+}
+
+.booking-aside p {
+  color: #ccc;
+  font-size: 12px;
+  margin-top: 15px;
+}
+
+.email-link {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  overflow-wrap: anywhere;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 35px 0;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-copy {
+  font-size: 11px;
+  color: #888;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 11px;
+  color: #bbb;
+}
+
+@media (max-width: 900px) {
+  .nav { min-height: 72px; }
+  .menu-btn { display: block; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 71px;
+    left: 0;
+    width: 100%;
+    padding: 24px 5%;
+    background: #080808;
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .nav-links.open { display: flex; }
+  .opportunities { grid-template-columns: 1fr; }
+  .application-layout,
+  .consultation-layout { grid-template-columns: 1fr; gap: 35px; }
+  section.content-section,
+  .application-section { padding: 70px 0; }
+  .booking-aside { min-height: 300px; }
+}
+
+@media (max-width: 480px) {
+  .brand { gap: 10px; letter-spacing: 4px; font-size: 11px; }
+  .monogram { font-size: 30px; }
+  .hero { min-height: 800px; }
+  .hero h1 { letter-spacing: 2px; }
+  .hero p { font-size: 13px; }
+  .actions { flex-direction: column; align-items: stretch; }
+  .btn { width: 100%; }
+  .roles { grid-template-columns: 1fr; gap: 12px; }
+  .form-card { padding: 20px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .field.full { grid-column: auto; }
+  .footer-row { flex-direction: column; align-items: flex-start; }
+  .payment-number { align-items: flex-start; flex-direction: column; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="AirLee home">
+      <span class="monogram">AL</span>
+      <span>AIRLEE</span>
+    </a>
+
+    <button class="menu-btn" id="menuBtn"
+      aria-expanded="false" aria-controls="navLinks">MENU</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#opportunities">Opportunities</a>
+      <a href="#apply">Apply</a>
+      <a href="#consultation">Consultation</a>
+      <a href="https://airlee.online">AirLee Main Site ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="eyebrow">Careers &amp; Strategy</div>
+        <h1>AIRLEE</h1>
+        <h2>Build. Influence. Elevate.</h2>
+        <p>
+          Join the AirLee network. Bring your ideas, develop meaningful
+          business connections, and explore opportunities in marketing,
+          business development, and strategy.
+        </p>
+
+        <div class="actions">
+          <a href="#apply" class="btn">Apply to AirLee <span>↗</span></a>
+          <a href="#consultation" class="btn btn-outline">
+            Request a Quotation <span>↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-bottom">
+      <div class="container roles">
+        <div class="role">
+          <strong>Marketing Agents</strong>
+          <span>Promote. Connect. Grow.</span>
+        </div>
+        <div class="role">
+          <strong>Strategists</strong>
+          <span>Build. Plan. Execute.</span>
+        </div>
+        <div class="role">
+          <strong>Business Development</strong>
+          <span>Create. Expand. Succeed.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section" id="opportunities">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Work with AirLee</div>
+        <h2>Opportunity is a strategy.</h2>
+        <p>
+          We welcome people with initiative, strong communication skills,
+          and an interest in growing brands and building business relationships.
+          Submit your application for consideration.
+        </p>
+      </div>
+
+      <div class="opportunities">
+        <article class="opportunity">
+          <span class="number">01 / MARKETING</span>
+          <h3>Marketing Agent</h3>
+          <p>
+            Help increase brand awareness, develop customer relationships,
+            and identify new opportunities.
+          </p>
+        </article>
+
+        <article class="opportunity">
+          <span class="number">02 / STRATEGY</span>
+          <h3>Marketing Strategist</h3>
+          <p>
+            Contribute campaign ideas, research markets, and develop
+            practical strategies for business growth.
+          </p>
+        </article>
+
+        <article class="opportunity">
+          <span class="number">03 / DEVELOPMENT</span>
+          <h3>Business Development</h3>
+          <p>
+            Research partnerships, identify potential clients, and help
+            develop commercial relationships.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="application-section" id="apply">
+    <div class="container application-layout">
+      <div>
+        <div class="section-heading">
+          <div class="eyebrow">Applications</div>
+          <h2>Your next move starts here.</h2>
+          <p>
+            Complete the application and select your CV in PDF format.
+            Your email application is free. Submission does not guarantee
+            employment or a contract.
+          </p>
+        </div>
+
+        <form class="form-card" id="applicationForm">
+          <div class="form-grid">
+            <div class="field full">
+              <label for="fullName">Full name *</label>
+              <input id="fullName" name="fullName" required
+                autocomplete="name" placeholder="Enter your full name">
+            </div>
+
+            <div class="field">
+              <label for="email">Email address *</label>
+              <input type="email" id="email" name="email" required
+                autocomplete="email" placeholder="you@example.com">
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone number *</label>
+              <input type="tel" id="phone" name="phone" required
+                autocomplete="tel" placeholder="+254...">
+            </div>
+
+            <div class="field full">
+              <label for="location">Location *</label>
+              <input id="location" name="location" required
+                autocomplete="address-level2" placeholder="City, Country">
+            </div>
+
+            <div class="field full">
+              <label for="expertise">Area of expertise *</label>
+              <select id="expertise" name="expertise" required>
+                <option value="">Select your expertise</option>
+                <option>Digital Marketing</option>
+                <option>Social Media Marketing</option>
+                <option>Sales and Lead Generation</option>
+                <option>Business Strategy</option>
+                <option>Market Research</option>
+                <option>Partnership Development</option>
+                <option>Content Creation</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="position">Position applying for *</label>
+              <select id="position" name="position" required>
+                <option value="">Choose a position</option>
+                <option value="Marketing Agent">Marketing Agent</option>
+                <option value="Marketing Strategist">Marketing Strategist</option>
+                <option value="Business Development Agent">Business Development Agent</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="experience">Relevant experience</label>
+              <textarea id="experience" name="experience"
+                placeholder="Describe your experience, skills, or projects."></textarea>
+            </div>
+
+            <div class="field full">
+              <label for="cv">Upload CV (PDF, maximum 5 MB) *</label>
+              <input type="file" id="cv" name="cv"
+                accept=".pdf,application/pdf" required>
+            </div>
+          </div>
+
+          <label class="consent">
+            <input type="checkbox" name="privacyConsent" required>
+            <span>
+              I consent to AirLee using my application details for recruitment
+              purposes and understand that my email app will open to send my application.
+            </span>
+          </label>
+
+          <button class="submit-btn" type="submit">
+            Send CV Application by Email →
+          </button>
+
+          <p class="form-note" id="applicationStatus" aria-live="polite">
+            Your email app will open with your application details. You must
+            attach your selected CV to the email and press Send.
+          </p>
+        </form>
+      </div>
+
+      <aside class="application-aside">
+        <h3>Great people create great opportunities.</h3>
+        <p>
+          We are interested in your ability to think clearly, communicate
+          professionally, and bring practical ideas to a growing business.
+        </p>
+
+        <div class="aside-line"></div>
+
+        <div class="aside-item">
+          <div>01</div>
+          <div>
+            <strong>Complete the application</strong>
+            <span>Share your details, skills, and experience.</span>
+          </div>
+        </div>
+
+        <div class="aside-item">
+          <div>02</div>
+          <div>
+            <strong>Attach your CV</strong>
+            <span>Attach your PDF CV in your email app before sending.</span>
+          </div>
+        </div>
+
+        <div class="aside-item">
+          <div>03</div>
+          <div>
+            <strong>Application review</strong>
+            <span>Suitable applicants may be contacted about opportunities.</span>
+          </div>
+        </div>
+
+        <a class="email-link" href="mailto:flyairleee@gmail.com">
+          Contact AirLee by email ↗
+        </a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="content-section" id="consultation">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Private Consultation</div>
+        <h2>A conversation can change your trajectory.</h2>
+        <p>
+          Request a quotation for career guidance, marketing strategy,
+          or business development. AirLee will respond by email.
+        </p>
+      </div>
+
+      <div class="consultation-layout">
+        <div class="price-card">
+          <div class="eyebrow">Consultation enquiry</div>
+          <h3>Make your next move count.</h3>
+          <div class="price">$8</div>
+          <p>Indicative consultation price · Request confirmation by email.</p>
+
+          <form class="booking-form" id="bookingForm">
+            <div class="service-options">
+              <label class="service-option">
+                <input type="radio" name="service" value="Career Guidance" required>
+                <span>
+                  <strong>Career Guidance</strong>
+                  <span>Career direction and professional opportunities.</span>
+                </span>
+              </label>
+
+              <label class="service-option">
+                <input type="radio" name="service" value="Marketing Strategy" required>
+                <span>
+                  <strong>Marketing Strategy</strong>
+                  <span>Positioning, campaigns, and brand growth.</span>
+                </span>
+              </label>
+
+              <label class="service-option">
+                <input type="radio" name="service" value="Business Development" required>
+                <span>
+                  <strong>Business Development</strong>
+                  <span>Partnerships and business growth.</span>
+                </span>
+              </label>
+            </div>
+
+            <div class="field">
+              <label for="bookingName">Full name *</label>
+              <input id="bookingName" name="fullName" required
+                autocomplete="name" placeholder="Your full name">
+            </div>
+
+            <div class="field">
+              <label for="bookingEmail">Email address *</label>
+              <input type="email" id="bookingEmail" name="email" required
+                autocomplete="email" placeholder="you@example.com">
+            </div>
+
+            <div class="field">
+              <label for="bookingDate">Preferred date *</label>
+              <input type="date" id="bookingDate" name="date" required>
+            </div>
+
+            <div class="field">
+              <label for="bookingTime">Preferred time *</label>
+              <select id="bookingTime" name="time" required>
+                <option value="">Choose a time</option>
+                <option value="09:00">09:00 AM</option>
+                <option value="10:00">10:00 AM</option>
+                <option value="11:00">11:00 AM</option>
+                <option value="12:00">12:00 PM</option>
+                <option value="14:00">02:00 PM</option>
+                <option value="15:00">03:00 PM</option>
+                <option value="16:00">04:00 PM</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="bookingNotes">Requirements or quotation details</label>
+              <textarea id="bookingNotes" name="notes"
+                placeholder="Tell us what you need and what you would like quoted."></textarea>
+            </div>
+
+            <button class="submit-btn" type="submit">
+              Request a Quotation by Email →
+            </button>
+
+            <p class="payment-note" id="bookingStatus" aria-live="polite">
+              No online payment is collected on this page. Email your request
+              to receive confirmation of pricing and availability.
+            </p>
+          </form>
+
+          <div class="aside-line"></div>
+
+          <div class="eyebrow">Direct payment details</div>
+          <p>Send money directly to the number below using your payment app.</p>
+
+          <div class="payment-number">
+            <strong id="paymentNumber">0791637247</strong>
+            <button class="copy-btn" type="button" id="copyPaymentNumber">
+              Copy Number
+            </button>
+          </div>
+
+          <p class="payment-note" id="copyStatus" aria-live="polite">
+            Confirm the recipient and agreed amount before making payment.
+            Keep your transaction confirmation for your records.
+          </p>
+
+          <a class="email-link"
+             href="mailto:flyairleee@gmail.com?subject=AirLee%20Payment%20Enquiry">
+            Ask for payment confirmation by email ↗
+          </a>
+        </div>
+
+        <aside class="booking-aside">
+          <div class="eyebrow">AirLee Strategy</div>
+          <h3>Think clearly. Move deliberately. Build something meaningful.</h3>
+          <p>
+            Focused conversations for people looking to improve their
+            direction, marketing, and commercial opportunities.
+          </p>
+          <a class="email-link" href="mailto:flyairleee@gmail.com">
+            flyairleee@gmail.com ↗
+          </a>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <a class="brand" href="#home">
+      <span class="monogram">AL</span>
+      <span>AIRLEE</span>
+    </a>
+
+    <div class="footer-links">
+      <a href="#opportunities">Careers</a>
+      <a href="#apply">Apply</a>
+      <a href="#consultation">Quotations</a>
+      <a href="https://airlee.online">Main website ↗</a>
+      <a href="mailto:flyairleee@gmail.com">Email AirLee</a>
+    </div>
+
+    <div class="footer-copy">
+      © <span id="year"></span> AirLee. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', String(isOpen));
+  menuBtn.textContent = isOpen ? 'CLOSE' : 'MENU';
+});
+
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    menuBtn.textContent = 'MENU';
+  });
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const dateInput = document.getElementById('bookingDate');
+const now = new Date();
+const localToday = new Date(
+  now.getTime() - now.getTimezoneOffset() * 60000
+).toISOString().split('T')[0];
+
+dateInput.min = localToday;
+
+// Validate CV and keep the selected file ready for the email workflow.
+document.getElementById('cv').addEventListener('change', function () {
+  const file = this.files[0];
+  const status = document.getElementById('applicationStatus');
+
+  if (!file) return;
+
+  if (file.type !== 'application/pdf' ||
+      !file.name.toLowerCase().endsWith('.pdf')) {
+    this.value = '';
+    status.textContent = 'Please select a PDF file.';
+    return;
+  }
+
+  if (file.size > 5 * 1024 * 1024) {
+    this.value = '';
+    status.textContent = 'Your CV must be 5 MB or smaller.';
+    return;
+  }
+
+  status.textContent = 'CV selected: ' + file.name +
+    '. Your email app will open when you submit the form.';
+});
+
+// Open the visitor's email app with application details.
+// Email attachments must be added manually by the visitor.
+document.getElementById('applicationForm').addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  if (!this.reportValidity()) return;
+
+  const cv = document.getElementById('cv').files[0];
+  const status = document.getElementById('applicationStatus');
+
+  if (!cv || cv.type !== 'application/pdf' ||
+      !cv.name.toLowerCase().endsWith('.pdf') ||
+      cv.size > 5 * 1024 * 1024) {
+    status.textContent = 'Please select a valid PDF CV under 5 MB.';
+    return;
+  }
+
+  const data = new FormData(this);
+
+  const subject = 'AirLee Job Application - ' + data.get('fullName');
+
+  const body = [
+    'AIRLEE JOB APPLICATION',
+    '',
+    'Full name: ' + data.get('fullName'),
+    'Email: ' + data.get('email'),
+    'Phone: ' + data.get('phone'),
+    'Location: ' + data.get('location'),
+    'Area of expertise: ' + data.get('expertise'),
+    'Position: ' + data.get('position'),
+    '',
+    'Relevant experience:',
+    data.get('experience') || 'Not provided',
+    '',
+    'CV filename: ' + cv.name,
+    '',
+    'Please attach the selected PDF CV before sending this email.'
+  ].join('\n');
+
+  status.textContent =
+    'Opening your email app. Attach "' + cv.name +
+    '" to the email and press Send to submit your application.';
+
+  window.location.href = 'mailto:flyairleee@gmail.com' +
+    '?subject=' + encodeURIComponent(subject) +
+    '&body=' + encodeURIComponent(body);
+});
+
+// Prepare a quotation request in the visitor's email app.
+document.getElementById('bookingForm').addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  if (!this.reportValidity()) return;
+
+  const data = new FormData(this);
+
+  const subject = 'AirLee Quotation Request - ' + data.get('service');
+
+  const body = [
+    'AIRLEE QUOTATION REQUEST',
+    '',
+    'Name: ' + data.get('fullName'),
+    'Email: ' + data.get('email'),
+    'Service: ' + data.get('service'),
+    'Preferred date: ' + data.get('date'),
+    'Preferred time: ' + data.get('time'),
+    '',
+    'Requirements:',
+    data.get('notes') || 'No additional details supplied.',
+    '',
+    'Please confirm the quotation, availability, and payment details.'
+  ].join('\n');
+
+  document.getElementById('bookingStatus').textContent =
+    'Opening your email app. Review the quotation request and press Send.';
+
+  window.location.href = 'mailto:flyairleee@gmail.com' +
+    '?subject=' + encodeURIComponent(subject) +
+    '&body=' + encodeURIComponent(body);
+});
+
+// Copy the direct payment number.
+document.getElementById('copyPaymentNumber').addEventListener('click', async function () {
+  const number = document.getElementById('paymentNumber').textContent;
+  const status = document.getElementById('copyStatus');
+
+  try {
+    await navigator.clipboard.writeText(number);
+    status.textContent = 'Payment number copied: ' + number;
+  } catch (error) {
+    const temporaryInput = document.createElement('textarea');
+    temporaryInput.value = number;
+    temporaryInput.style.position = 'fixed';
+    temporaryInput.style.opacity = '0';
+    document.body.appendChild(temporaryInput);
+    temporaryInput.select();
+
+    const copied = document.execCommand('copy');
+    temporaryInput.remove();
+
+    status.textContent = copied
+      ? 'Payment number copied: ' + number
+      : 'Please copy the number manually: ' + number;
+  }
+});
+</script>
+
+</body>
+</html>
